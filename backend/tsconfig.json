@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true,
+    "outDir": "./dist"
+  },
+  "include": ["schemas/**/*.ts"]
+}
+// {
+//   "compilerOptions": {
+//     "target": "ES2017",
+//     "lib": ["dom", "dom.iterable", "esnext"],
+//     "allowJs": true,
+//     "skipLibCheck": true,
+//     "strict": true,
+//     "forceConsistentCasingInFileNames": true,
+//     "module": "Preserve",
+//     "moduleDetection": "force",
+//     "isolatedModules": true,
+//     "jsx": "preserve",
+//     "incremental": true
+//   },
+//   "include": ["**/*.ts", "**/*.tsx", "schemas/post.ts", "schemas/index.ts", "schemas/homepage.ts"],
+//   "exclude": ["node_modules"]
+// }
