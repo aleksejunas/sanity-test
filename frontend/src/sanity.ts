@@ -9,15 +9,28 @@
 import { createClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 
+// Debug environment variables
+console.log('Sanity Config:', {
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: import.meta.env.VITE_SANITY_DATASET,
+  apiVersion: import.meta.env.VITE_SANITY_API_VERSION,
+});
+
+// The interface expects an object with an asset property containing a _ref string, which matches the structure of the 'post.mainImage
+
 interface SanitySource {
-  source: string;
+  asset: {
+    _ref: string;
+  };
 }
 
 export const sanityClient = createClient({
-  projectId: "your_project_id", // Replace with your project id
-  dataset: "production",
-  apiVersion: "2024-01-01",
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID,
+  dataset: import.meta.env.VITE_SANITY_DATASET,
+  apiVersion: import.meta.env.VITE_SANITY_API_VERSION,
   useCdn: true,
+  perspective: 'published',
+  withCredentials: false
 });
 
 const builder = imageUrlBuilder(sanityClient);
