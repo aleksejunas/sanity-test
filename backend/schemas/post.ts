@@ -1,3 +1,4 @@
+// schemas/post.ts
 export default {
   name: 'post',
   title: 'Post',
@@ -10,13 +11,19 @@ export default {
     },
     {
       name: 'body',
+      type: 'array',
       title: 'Body',
-      type: 'text',
+      of: [{type: 'block'}],
     },
     {
       name: 'mainImage',
-      title: 'Main Image',
       type: 'image',
+      title: 'Main Image',
+    },
+    {
+      name: 'puplishedAt',
+      type: 'datetime',
+      title: 'Published At',
     },
   ],
 }

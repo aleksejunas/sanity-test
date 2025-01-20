@@ -1,7 +1,7 @@
 // []  TODO: Style the Posts component
 // []  TODO: Add extra features to sanity studio
 // []  TODO: Add extra features to the component
-// []    TODO: Add 'rich text' plugin
+// []    TODO: Add 'block-content-to-react' plugin
 // []    TODO: Add 'Code Input' plugin | https://www.sanity.io/plugins/code-input
 // []    TODO: Add 'Markdown Input' plugin
 
