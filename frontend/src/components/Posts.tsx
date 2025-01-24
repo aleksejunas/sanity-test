@@ -4,14 +4,17 @@
 // []    TODO: Add 'block-content-to-react' plugin
 // []    TODO: Add 'Code Input' plugin | https://www.sanity.io/plugins/code-input
 // []    TODO: Add 'Markdown Input' plugin
+// [] TODO: Fix the issuse when new blog posts fail in the <p> element
 
 import { useEffect, useState } from "react";
 import { sanityClient, urlFor } from "../sanity";
+import BlockContent from "@sanity/block-content-to-react";
+import { BlockContentProps } from "@sanity/block-content-to-react";
 
 interface Post {
   _id: string;
   title: string;
-  body: string;
+  body: BlockContentProps["blocks"];
   mainImage?: {
     asset: {
       _ref: string;
@@ -52,7 +55,7 @@ export default function Posts() {
   if (!posts.length) return <div>No posts found</div>;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 bg-orange-400">
+    <div className="max-w-4xl mx-auto px-4 py-8 bg-pink-300 rounded">
       <h1 className="text-3xl font-bold mb-8">Blog Posts</h1>
       <div className="grid gap-8">
         {posts.map((post) => (
@@ -61,11 +64,11 @@ export default function Posts() {
               <img
                 src={urlFor(post.mainImage).url()}
                 alt={post.title}
-                className=" rounded-lg mb-4 w-300 h-200"
+                className="rounded-lg mb-4 w-300 h-200"
               />
             )}
             <h2 className="text-2xl font-semibold mb-4">{post.title}</h2>
-            <p className="text-gray-600">{post.body}</p>
+            <BlockContent blocks={post.body} />
           </article>
         ))}
       </div>
