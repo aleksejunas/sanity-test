@@ -1,17 +1,32 @@
 // import { useState } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
+import Navbar from "./components/Navbar/Navbar";
+import imagePath from "./assets/react.svg";
+import FilesPage from "./pages/FilesPage";
 
 function App() {
+  // const items = ["HOME", "BLOG", "FILES"];
+  const navItems = [
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: "Files", href: "/files" },
+  ];
   return (
     <BrowserRouter>
+      <Navbar
+        brandName="ALEKSEJUNAS"
+        imageSrcPath={imagePath}
+        navItems={navItems}
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/files" element={<FilesPage />} />
       </Routes>
     </BrowserRouter>
   );

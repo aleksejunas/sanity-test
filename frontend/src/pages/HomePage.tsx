@@ -17,11 +17,11 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Welcome to the Home Page</h1>
+    <div className="bg-[#2C2B2B]">
+      <h1 className="text-white">Welcome to the Home Page</h1>
       {data.map((item) => (
-        <div key={item.id}>
-          <h2>{item.title}</h2>
+        <div className="text-white" key={item.id}>
+          <h2 className="text-white">{item.title}</h2>
           <p>{item.description}</p>
         </div>
       ))}
