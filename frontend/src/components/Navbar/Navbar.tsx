@@ -1,7 +1,6 @@
 // TODO: Hover effect/color on the navbar links
 
 import { useState } from "react";
-// import "../../App.css";
 
 interface NavItem {
   name: string;
@@ -16,6 +15,7 @@ interface NavBarProps {
 
 const NavBar = ({ brandName, imageSrcPath, navItems }: NavBarProps) => {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <nav className="bg-[#212223] shadow-md mb-10">
@@ -33,7 +33,7 @@ const NavBar = ({ brandName, imageSrcPath, navItems }: NavBarProps) => {
         <button
           className="block lg:hidden px-3 py-2 border rounded text-gray-700 border-gray-700"
           type="button"
-          onClick={() => setSelectedIndex(selectedIndex === -1 ? 0 : -1)}
+          onClick={() => setIsModalOpen(true)}
         >
           <svg
             className="fill-current h-3 w-3"
@@ -44,11 +44,7 @@ const NavBar = ({ brandName, imageSrcPath, navItems }: NavBarProps) => {
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
         </button>
-        <div
-          className={`w-full lg:flex lg:items-center lg:w-auto ${
-            selectedIndex === -1 ? "hidden" : ""
-          }`}
-        >
+        <div className="hidden lg:flex lg:items-center lg:w-auto">
           <ul className="lg:flex lg:justify-between text-sm lg:flex-grow">
             {navItems.map((item, index) => (
               <li
@@ -83,6 +79,41 @@ const NavBar = ({ brandName, imageSrcPath, navItems }: NavBarProps) => {
           </form>
         </div>
       </div>
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-amber-400 w-full h-full p-4 rounded-lg shadow-lg overflow-auto">
+            <button
+              className="absolute top-2 right-4 text-white text-6xl"
+              onClick={() => setIsModalOpen(false)}
+            >
+              &times;
+            </button>
+            <ul className="text-sm mt-8">
+              {navItems.map((item, index) => (
+                <li
+                  key={item.name}
+                  className="nav-item"
+                  onClick={() => {
+                    setSelectedIndex(index);
+                    setIsModalOpen(false);
+                  }}
+                >
+                  <a
+                    // TODO: Find the perfect hover color
+
+                    className={`block mt-4 text-white text-6xl hover:text-red-400 ${
+                      selectedIndex === index ? "font-bold" : ""
+                    }`}
+                    href={item.href}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
