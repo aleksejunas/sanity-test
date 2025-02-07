@@ -4,11 +4,15 @@
 // [x]    TODO: Add 'block-content-to-react' plugin
 // []    TODO: Add 'Code Input' plugin | https://www.sanity.io/plugins/code-input
 // []    TODO: Add 'Markdown Input' plugin
-// [] TODO: Fix the issue when new blog posts fail in the <p> element
-// [] TODO: Have 1 main blog post to the right, and a recent blog posts with 5 blog posts in a smaller format to the left and scrollable
+// [x] TODO: Fix the issue when new blog posts fail in the <p> element
+// [x] TODO: Have 1 main blog post to the right, and a recent blog posts with 5 blog posts in a smaller format to the left and scrollable
 // [] TODO: Implement Navbar like Mark Manson
 // [] TODO: When choosing a blog post, change the page with ):( so the blog post is the only  thing on the page (or in a modal?)
-// // TODO: Remove the horizontal orange line in the blog post
+// /x/ TODO: Remove the horizontal orange line in the blog post
+// [] TODO: Enable the search bar in the Navbar for the blog posts
+// [] TODO: Add darkmode/lightmode to the entire site
+// [] TODO: Add a topic to the blog posts so they can be filtered
+// [] TODO: Add universial design to the site
 
 import { useEffect, useState } from "react";
 import { sanityClient, urlFor } from "../sanity";
