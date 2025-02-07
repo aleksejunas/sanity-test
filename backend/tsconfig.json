@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "lib": ["es6", "dom"],
     "module": "CommonJS",
+    "target": "ES6",
     "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "outDir": "./dist"
   },
   "include": ["schemas/**/*.ts"]
