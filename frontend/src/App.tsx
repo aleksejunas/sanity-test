@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
 import Navbar from "./components/Navbar/Navbar";
-import imagePath from "./assets/react.svg";
+import imagePath from "./assets//aleksejunas-logo-no-bg.png";
 import FilesPage from "./pages/FilesPage";
 import SinglePost from "./components/SinglePost/SinglePost";
 
