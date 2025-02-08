@@ -1,7 +1,10 @@
 // []  TODO: Style the Posts component
+// [] TODO: Add a looking for something specific section (orange) like on Mark Manson's blog
 // []  TODO: Add extra features to sanity studio
 // []  TODO: Add extra features to the component
 // [x]    TODO: Add 'block-content-to-react' plugin
+// [] TODO: Add Mux video preview plugin
+// [] TODO: Add Color input plugin
 // []    TODO: Add 'Code Input' plugin | https://www.sanity.io/plugins/code-input
 // []    TODO: Add 'Markdown Input' plugin
 // [x] TODO: Fix the issue when new blog posts fail in the <p> element

@@ -1,4 +1,4 @@
-import createSchema from 'part:@sanity/base/schema-creator'
+import createSchema from 'part:@sanity/base/schema-creator.ts'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 import homepage from './homepage'
 import post from './post'
